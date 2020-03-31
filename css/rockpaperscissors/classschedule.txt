@@ -1,0 +1,15 @@
+- Modify webpack.config.js to include the devtool to the exported module
+- Review Promises
+- Quick talk about async / await
+- export / import
+    - Move Employee and Manager classes to another file and import them in the main file
+    - Advice on Seggregating code into classes and modules
+        - Service that interacts with server in one file, other related stuff in other files
+        - Event listeners in one file
+        - Other code in other files. File should contain code thats related 
+- Javascript Event Loop
+- Integrating with Flask
+    - Introduce wsgi.py, app.py, routes.py
+    - Use them to create a running flask service
+    - Use webpack proxies to route the call to a running flask server
+- Exercises
