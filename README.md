@@ -171,7 +171,7 @@ Ultimately to render anything in a browser we need to have an html page. To plug
 npm install html-webpack-plugin html-loader --save-dev
 ```
 
-And then update the webpack configuration with the following
+And then update the webpack configuration to the following
 
 ```javascript
 const HtmlWebPackPlugin = require("html-webpack-plugin");
@@ -215,7 +215,7 @@ deployable units (like injecting the script tag for transpiled .js files).
 
 ## Development
 
-###HTML
+### HTML
 Now we're ready to write some source code. To do so, create a file called index.html in the `src` directory of your project with the following content
 
 ```html
@@ -227,44 +227,44 @@ Now we're ready to write some source code. To do so, create a file called index.
 </head>
 <body>
     <H1>Hello World!</H1>
+
+    <div class="row">
+        <div class="column">
+            <h2>Html</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+        
+        <div class="column">
+            <h2>CSS</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+        
+        <div class="column">
+            <h2>Javascript</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Vivamus venenatis velit nec neque ultricies, eget elementum magna tristique. Quisque vehicula, risus eget aliquam placerat, purus leo tincidunt eros, eget luctus quam orci in velit. Praesent scelerisque tortor sed accumsan convallis.</p>
+        </div>
+    </div>
 </body>
 </html>
 ``` 
 
-### Javascript
-To add functionality to our web pages i.e. to make them more than just static html pages that just allow you to view stuff, you would write logic
-in javascript. By default webpack looks for a `index.js` file in the `src` directory as the main point of entry for your application.
+### Running
 
-To add some javascript and to illustrate how it can make your web pages dynamic and interactive add the following content to your `index.js` file
+To view these files during your development on a web browser, issue the following command at the command terminal
 
 ```javascript
-
-function changeGreeting() {
-    let greeting = "Goodbye"
-
-    let elementsByTagName = document.getElementsByTagName("H1");
-
-    elementsByTagName[0].textContent = greeting;
-}
-
-setTimeout(changeGreeting, 5000);
+npm run start
 ```
-What we've done here is after 5 seconds call a function that would change the value of the first `H1` tag in your page.
 
-Of course, we may want to name our main js file as `start.js` in a subdirectory `js` under `src`, in which case we need to let webpack know what is our root or main js file that represents that starting point of all our javascript functionality. 
-This can be done by modifying the `webpack.config.js` file's entry section like so
+Remember how we added a `start` line to our `scripts` section of our `package.json` file ? That allows us to run the command `npm run start`. 
+The scripts section allows you to package complex commands that you need into a simple one-liner for easy running.
 
-```json
-module.exports = {
-    entry: [
-        './src/js/start.js'
-    ]
-}
-```
+Notice how when you run the command your get a bunch of compilation output in the terminal indicating that webpack has gone through all of its setup
+config and invoked the various loaders to get the final end product created and made available automatically through the dev web server.
 
 ### CSS
-In web development, the styling of your web-page i.e. the layout of elements, the spacing between them, the coloring, the border and so on,
-is done using **Cascading Style Sheets** or `CSS` files for short. These files contain rules that specify what style should be applied to which 
+In web development, the styling of your web-page i.e. the layout of elements, the spacing between them, the coloring, the border, essentially the presentation responsibility of the web page
+is handled by **Cascading Style Sheets** or `CSS` files for short. These files contain rules that specify what style should be applied to which 
 element. This is done by providing 
  * a selector in the rule -- which is used to determine what elements the style should be applied to
  * a value -- which states what style i.e. color, background, layout etc. to be applied to the selected element.
@@ -273,7 +273,7 @@ To get up and running with CSSs, we need to add them to our webpack ecosystem, w
 
 Loader: Like the HTML, we need a webpack loader to be pulled in. Run the following command to pull in the css-loader and style-loader
 
-```jshelllanguage
+```javascript
 npm install css-loader style-loader --save-dev
 ``` 
 
@@ -299,9 +299,18 @@ h1 {
     border: 1px solid orangered;
     padding:10px;
 }
+
+.column {
+    flex: 30%;
+    /* padding: 10px; */
+}
+
+.row {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
 ```
-What we've done here is setup a style that applies to add `h1` elements in your html files which will create a border of color
-orangered and a padding of 10 pixels.
+What we've done here is setup some styles that will layout the various elements in the page such that all elements marked column will align horizontally within an element marked row. We'll play with some of these settings when we run the file. 
 
 Inclusion: Finally, we need to include our css styles into the webpack build which we can do in one of two ways.
  1. We could use the entry section of the webpack.config.js file to include the root css like so
@@ -313,28 +322,41 @@ module.exports = {
     ]
 ```
 
- 2. Or we could just import the root css in our .js file to let webpack know thats where our css dependency tree starts from. To do that add the following line at the top of your `start.js` file
+Go ahead and stop the webpack dev-server (Ctrl-C) and run it again (`npm run start`). You should now see the elements on the page align horizontally. Open up the browser dev tools and play with the settings for row and column to see how it impacts the layout of the page.
+
+
+### Javascript
+To add functionality to our web pages i.e. to make them more than just static html pages that just allow you to view stuff, you would write logic
+in javascript. By default webpack looks for a `index.js` file in the `src` directory as the main point of entry for your application.
+
+To add some javascript and to illustrate how it can make your web pages dynamic and interactive add the following content to your `index.js` file
 
 ```javascript
-import './styles/app.css';
+
+function changeGreeting() {
+    let greeting = "Goodbye"
+
+    let elementsByTagName = document.getElementsByTagName("H1");
+
+    elementsByTagName[0].textContent = greeting;
+}
+
+setTimeout(changeGreeting, 5000);
+```
+What we've done here is after 5 seconds call a function that would change the value of the first `H1` tag in your page.
+
+Of course, if we choose to name our main javascript file differently, i.e. suppose we want to name our main js file as `start.js` in a subdirectory `js` under `src`, we'll need to let webpack know that. This can be done by modifying the `webpack.config.js` file's entry section like so
+
+```json
+module.exports = {
+    entry: [
+        './src/js/start.js'
+    ]
+}
 ```
 
-That's it ! Now your source files are created, you're ready now to run them and see some output.
+Restart the webpack dev server and load up the page in your browser again. You should see the heading text change after 5 seconds from `Hello` to `Goodbye`. This illustrates how Javascript can be used to add logic and dynamism to your webpage.
 
-
-### Running
-
-To view these files during your development on a web browser, issue the following command at the command terminal
-
-```jshelllanguage
-npm run start
-```
-
-Remember how we added a `start` line to our `scripts` section of our `package.json` file ? That allows us to run the command `npm run start`. 
-The scripts section allows you to package complex commands that you need into a simple one-liner for easy running.
-
-Notice how when you run the command your get a bunch of compilation output in the terminal indicating that webpack has gone through all of its setup
-config and invoked the various loaders to the final end product created and made available automatically through the dev web server.
 
 Go ahead and make the following change to your `start.js` file to change the value of the greeting variable
 
@@ -354,7 +376,7 @@ it then seamlessly streams on-the-fly to the browser. (UI development yay !!)
 
 Finally, when you're ready to deploy your project to a web server for production deployment, all you need to do is issue the following command
 
-```jshelllanguage
+```javascript
 npm run build
 ```
 
