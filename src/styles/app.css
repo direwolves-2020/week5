@@ -1,0 +1,14 @@
+h1 {
+    border: 1px solid orangered;
+    padding:10px;
+}
+
+.column {
+    flex: 30%;
+    /* padding: 10px; */
+}
+
+.row {
+    display: flex;
+    /* flex-wrap: wrap; */
+}
