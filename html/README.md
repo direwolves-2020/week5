@@ -25,21 +25,13 @@
 * Every browser renders HTML differently.
 * A `heading` tag may have different sizing and spacing on Chrome vs. Firefox vs. IE, and the like
 
-##### MDN 
-Let's go through the guide to get introduced to HTML
-[Getting Started with HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
-
-As you will see with anything web related, MDN is a very useful resource, both for introductory tutorials as well
-as a reference guide to look up items. Please get familiar with it and have it bookmarked for easy reference.
-
 
 ***Is HTML Programming?***
 
 * Is HTML a programming language? Why or why not?
 * HTML is NOT a programming language
 * It is not used to perform any logic
-* It's only purpose is to display elements in the browser
-* Think of this as being similar to PDFs
+* It's only purpose is to display elements in the browser: Specifically define the structure of content in a webpage
 
 ***HTML TREE***
 
@@ -65,7 +57,6 @@ as a reference guide to look up items. Please get familiar with it and have it b
 * `head`
 	* The top of your document
 	* Consists mainly of elements that will connect the document to other files 
-	* This is where you can attach your `css` files
 	* Much of what goes in the head tag is not seen by the user
 	* The only real `tag` that will show to the user may be the `<title></title>` tag
 		* This is the name of the tab for the browser
@@ -91,6 +82,14 @@ as a reference guide to look up items. Please get familiar with it and have it b
 	* a tag with href
 	* img tag with src
 ```
+
+##### MDN 
+Let's go through the guide to get introduced to HTML
+[Getting Started with HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
+
+As you will see with anything web related, MDN is a very useful resource, both for introductory tutorials as well
+as a reference guide to look up items. Please get familiar with it and have it bookmarked for easy reference.
+
 
 ##### Part 2 - HTML5 Intro
 

@@ -25,9 +25,9 @@ CSS Selectors can be specified in a variety of ways and are in themselves very p
 when applied to the HTML DOM results in a sub-set of elements whose style properties you want to manipulate. Popular Javascript 
 languages like **JQuery** are written based on CSS Selectors.
 
-[CSS Selectors - Introduction](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started)
-
 [CSS Selectors - In depth](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors)
+
+[CSS Selectors - Examples](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started)
 
 
 ## CSS Declaration Values
