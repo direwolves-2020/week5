@@ -1,34 +1,33 @@
 # CSS 
 
 Cascading Style Sheets or CSS for short are the rules and directives that are used to style an html page. Think of the .html file as
-providing the structure for a web page, in that what elements should appear on a page, a children of what other element in which
+providing the structure for a web page, in that what elements should appear on a page, as children of what other element in which
 section (header or body) and so on. The CSS then adds `style` to that structure: How should the elements on the page be positioned
-in a layout, what color should the elements have, should they have borders, should they have background colors and the like.
-
-[What is CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/How_CSS_works)
+in a layout, what color should the elements have, should they have borders, should they have background colors and the like: Essentially, the presentation aspect of the webpage.
 
 There are various topics that are important to understanding CSS's which are touched upon below. For a more comprehensive reference,
 please refer to the Mozilla Developers Network site found in the resources section below.
 
 
 ## Syntax
-CSS rules need to be specified using their own specific syntax. A rule consists of a **selector** and a **CSS declaration** that is 
+CSS rules need to be specified using their own specific syntax. A rule consists of a **selector** and one or more **CSS declarations** that are 
 typically specified in a .css file.
 
-The selector determines the set of elements of the DOM to which the CSS declaration should be applied. 
+The selector determines the set of elements of the DOM to which the CSS declarations should be applied. 
 
-The CSS declaration consists of a **property** that specifies the property of the element whose value to set, and a **value** which is the
-value to which the property must be set. Typically CSS declarations contain multiple property/value pairs, which are put together to
-form a **CSS declaration Block**.
+The CSS declaration consists of a **property** that specifies the property of the element whose value to set, and a **value** which is the value to which the property must be set. One or more css declarations when applied with a selector
+together for a **CSS rule set**. A CSS file will contain multiple CSS rule sets, each one styling a different set of nodes in the **DOM Tree**.
 
-[CSS Syntax](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Syntax)
+[CSS Syntax](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
 
 ## Selectors
 CSS Selectors can be specified in a variety of ways and are in themselves very powerful. Think of them as like a regex pattern that 
 when applied to the HTML DOM results in a sub-set of elements whose style properties you want to manipulate. Popular Javascript 
 languages like **JQuery** are written based on CSS Selectors.
 
-[CSS Selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors)
+[CSS Selectors - Introduction](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/Getting_started)
+
+[CSS Selectors - In depth](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors)
 
 
 ## CSS Declaration Values
@@ -60,7 +59,7 @@ Following on from the Box model, there are several ways in which you can style b
 [Box Styling Effects](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes/Advanced_box_effects)
 
 
-## Layout
+## Layout and Positioning
 CSS offers a multitude of options to specify how the elements of a page should be laid out. This will drive the flow of elements
 as they appear positioned on a web page, their alignment with one another, the spacing etc.
 

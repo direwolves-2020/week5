@@ -9,8 +9,7 @@ const HtmlWebpackPluginConfig = new HtmlWebPackPlugin({
 module.exports = {
     entry: [
         './src/styles/app.css',
-        './src/styles/style1.css',
-        './src/js/objectmodel.js'
+        './src/styles/style1.css'
     ],
     module: {
         rules: [
