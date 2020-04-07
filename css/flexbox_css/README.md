@@ -56,8 +56,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>FLEXING ALL DAY</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class='container'>
@@ -79,13 +77,23 @@
 	color: white;
 }
 
-.red{background-color: red;}
-.green{background-color: green;}
-.blue{background-color: blue;}
-.purple{background-color: purple;}
-.pink{background-color: pink;}
+.red{
+	background-color: red;
+}
+.green{
+	background-color: green;
+}
+.blue{
+	background-color: blue;
+}
+.purple{
+	background-color: purple;
+}
+.pink{
+	background-color: pink;
+}
 ```
-* We have hooked up the `Normalize CDN` to our HTML file
+
 * Our div with a class `container` will be our flex container
 * The direct elements inside of it will be will be flex items
 
@@ -216,11 +224,6 @@
 * We can also be more specific by adding three values to flex to represent `flex-grow` / `flex-shrink` / `flex-basis`
 * Try adding `flex: 10 5 500px` to one of the flex items
 
-***TEN MINUTE EXERCISE***
-
-* TIME TO DRAW
-* Open the example folder and show off the html and corresponding css files. 
-* Take two minutes to draw out what you think the html/css will show in the browser
 
 ##### Resources
 
