@@ -1,17 +1,18 @@
+import App from './app';
 
+let app = new App();
 
-function bar(obj) {
-    obj.favoritecolor = "pink";
-}
+let rock = document.getElementById('r');
+rock.addEventListener('click', (e) => {
+    app.handleUserInput('rock');
+});
 
-function foo() {
-    let obj = {
-        name: "Byul",
-        favoritecolor: "blue"
-    };
+let paper = document.getElementById('p');
+paper.addEventListener('click', (e) => {
+    app.handleUserInput('paper');
+});
 
-    bar(obj);
-
-    console.log(obj);
-
-}
+let scissors = document.getElementById('s');
+scissors.addEventListener('click', (e) => {
+    app.handleUserInput('scissors');
+});

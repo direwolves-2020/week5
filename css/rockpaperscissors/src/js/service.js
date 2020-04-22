@@ -1,16 +1,15 @@
+export default class Service {
 
-function calculateResult(userMove, computerMove) {
-    console.log("And the winner is....");
-    return "rock";
+    constructor() {
+        this.saveScoresUrl = "/api/savescores";
+    }
+
+    saveGameScores(results) {
+        let url = this.saveScoresUrl + `?user=${results.userScore}&computer=${results.computerScore}`;
+
+        return fetch(url)
+            .then((response) => {
+                console.log(`Fetch response ${response}`);
+            });
+    }
 }
-
-function getComputerMove() {
-    console.log("Retrieving computer move...");
-    return "paper";
-}
-
-const HUNDRED = 100;
-
-export {
-    calculateResult, getComputerMove, HUNDRED
-};
